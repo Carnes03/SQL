@@ -1,0 +1,43 @@
+--Create a jewelry store database
+
+CREATE TABLE jewelry (
+id INTEGER PRIMARY KEY, 
+name TEXT,
+color TEXT,
+price INTEGER,
+qty INTEGER
+);
+
+INSERT INTO jewelry VALUES (1, "So Good", "Blue", 20.00, 3);
+INSERT INTO jewelry VALUES (2, "Immanuel", "Blue", 25.00, 4);
+INSERT INTO jewelry VALUES (3, "All Things New", "Green", 28.00, 5);
+INSERT INTO jewelry VALUES (4, "Halo", "Green", 30.00, 6);
+INSERT INTO jewelry VALUES (5, "Ailen Super Star", "Orange", 35.00, 7);
+INSERT INTO jewelry VALUES (6, "Scared of Lonely", "Orange", 38.00, 8);
+INSERT INTO jewelry VALUES (7, "Sunroof", "Yellow", 40.00, 9);
+INSERT INTO jewelry VALUES (8, "Don't Worry Bout Me", "Yellow", 45.00, 10);
+INSERT INTO jewelry VALUES (9, "Drivers License", "Yellow", 48.00, 11);
+INSERT INTO jewelry VALUES (10, "In The Heights", "Red", 50.00, 12);
+INSERT INTO jewelry VALUES (11, "We Don't Talk About Bruno", "Red", 55.00, 13);
+INSERT INTO jewelry VALUES (12, "Never Enough", "Red", 20.00, 14);
+INSERT INTO jewelry VALUES (13, "We Three Kings", "Purple", 25.00, 15);
+INSERT INTO jewelry VALUES (14, "History", "Pink", 28.00, 15);
+INSERT INTO jewelry VALUES (15, "Friends", "Black", 30.00, 15);
+
+--Display the database ordered by price.
+
+SELECT price
+FROM jewelry
+ORDER BY price;
+
+--What is the avg price of jewelry with a quantity of 15?
+
+SELECT AVG (price) "qty"
+FROM jewelry
+WHERE qty = 15;
+
+--Which jewelry item is below a quantity of 8?
+
+SELECT name, price, qty
+FROM jewelry
+WHERE qty < 8;
