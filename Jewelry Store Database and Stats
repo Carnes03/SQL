@@ -1,4 +1,4 @@
---Create a jewelry store database
+## Create a jewelry store database
 
 CREATE TABLE jewelry (
 id INTEGER PRIMARY KEY, 
@@ -24,19 +24,19 @@ INSERT INTO jewelry VALUES (13, "We Three Kings", "Purple", 25.00, 15);
 INSERT INTO jewelry VALUES (14, "History", "Pink", 28.00, 15);
 INSERT INTO jewelry VALUES (15, "Friends", "Black", 30.00, 15);
 
---Display the database ordered by price.
+#01 Display the database ordered by price.
 
 SELECT price
 FROM jewelry
 ORDER BY price;
 
---What is the avg price of jewelry with a quantity of 15?
+#02 What is the avg price of jewelry with a quantity of 15?
 
 SELECT AVG (price) "qty"
 FROM jewelry
 WHERE qty = 15;
 
---Which jewelry item is below a quantity of 8?
+#03 Which jewelry item is below a quantity of 8?
 
 SELECT name, price, qty
 FROM jewelry
