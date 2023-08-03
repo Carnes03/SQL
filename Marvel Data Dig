@@ -1,0 +1,50 @@
+## In this project we dive into the vast collection of data about our favorite superheroes and villains from the Marvel universe. 
+Using advanced SELECT queries we unlock hidden insights and valuable information about these iconic characters.  
+
+#01 What is the avg strength of all the Marvel characters?
+
+SELECT ROUND (AVG (strength), 0)
+AS avg_strength
+FROM marvels;
+
+#02 What are the highest and lowest heights, rounded to the nearest whole number, for characters grouped by their respective strength levels?
+
+SELECT strength,
+  ROUND (MAX(height_in),0) AS max_height,
+  ROUND (MIN (height_in),0) AS min_height
+FROM marvels
+GROUP BY strength;
+
+#03 What is the combined power rate (speed + durability + fighting skills) for Marvel characters in each alignment category whose total power rate exceeds 25?
+
+SELECT alignment, 
+SUM (speed + durability + fighting_skills) AS power_rate
+FROM marvels
+GROUP BY alignment
+HAVING power_rate > 25;
+
+#04 Which Marvel characters are from the United States (USA) or the European Union Area (EUA)?
+
+SELECT name AS marvel_characters
+FROM marvels
+WHERE hometown = 'USA' OR 'EUA';
+
+#05 For Marvel characters with intelligence scores between 0 and 15, what are the alignments and genders, sorted by gender in ascending order?
+
+SELECT alignment, gender, intelligence
+FROM marvels
+WHERE intelligence
+BETWEEN 0 AND 15
+ORDER BY gender;
+
+#06 How are Marvel characters rated based on their popularity scores?
+
+SELECT name, popularity AS marvel_char,
+CASE
+WHEN popularity < 21 THEN 'GREAT'
+WHEN popularity > 30 AND popularity <= 39 THEN 'GOOD'
+WHEN popularity > 40 AND popularity <= 75 THEN 'OKAY'
+ELSE 'POOR'
+END as "marvel_char_rating"
+FROM marvels
+ORDER BY popularity ASC;
