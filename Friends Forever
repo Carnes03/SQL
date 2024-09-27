@@ -1,9 +1,14 @@
+#This file highlights my ability to use foundational SQL commands to effectively: create and structure tables, update and delete records, and alter columns to ensure 
+data remains accurate and up-to-date!
+
+#create a table
 CREATE TABLE friends (
   id INTEGER,
   name TEXT,
   birthday DATE
 );
 
+#insert a record
 INSERT INTO friends (id, name, birthday)
 VALUES (1, 'Ororo Munroe', '1940-05-30');
 
@@ -13,19 +18,24 @@ VALUES (2, 'Harry Potter', '1995-03-08');
 INSERT INTO friends (id, name, birthday)
 VALUES (3, 'Agatha Christie', '1970-09-08');
 
+#update a record
 UPDATE friends
 SET name = 'Storm'
 WHERE id = 1;
 
+#alter a table
 ALTER TABLE friends
 ADD email TEXT; 
 
+#update a record
 UPDATE friends
 SET email ='storm@codecademy.com'
 WHERE id = 1;
 
+#delete a record
 DELETE FROM friends
 WHERE id = 1;
 
+#confirm and check results
 SELECT *
 FROM friends;
